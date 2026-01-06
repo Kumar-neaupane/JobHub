@@ -1,0 +1,16 @@
+@import "tailwindcss";
+.title{
+    font-family: 'Road Rage', cursive;
+}
+.navitems{
+    font-family: 'Sour Gummy', cursive;
+}
+:root{
+    --bg-color:#00B074;
+}
+.Jobpost{
+    font-family: 'Sour Gummy', cursive;
+}
+.homeitems{
+    font-family: 'Sour Gummy', cursive;
+}
