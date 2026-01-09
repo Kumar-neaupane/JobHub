@@ -4,18 +4,33 @@ import Home from "./features/home/Home.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./features/auth/Login.jsx";
+import JobDetails from "./features/jobs/JobDetails.jsx";
+// import About from "./features/home/components/About.jsx";
+// import Contact from "./features/home/components/Contact.jsx";
+import Register from "./features/auth/Register.jsx";
 
 const App = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration (ms)
-      once: true, // animate only once
+      duration: 1000, 
+      once: true, 
       easing: "ease-out-cubic",
     });
   }, []);
   return (
     <div>
-      <Home />
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/jobs" element={<JobDetails />} />
+    {/* <Route path="/about" element={<About />} /> */}
+    {/* <Route path="/contact" element={<Contact />} /> */}
+    <Route path="/register" element={<Register />} />
+
+      </Routes>
+     
     </div>
   );
 };

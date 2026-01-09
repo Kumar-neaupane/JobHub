@@ -146,7 +146,7 @@ const Footer = () => {
             Dolor amet sit justo amet elitr clita ipsum elitr est.
           </p>
           <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <Input placeholder="Your email" classNames="w-full h-10 flex-1" />
+            <Input placeholder="Your email" classNames="w-full h-10 flex-1 bg-white" />
             <Button
               className="w-full sm:w-auto h-10 px-4 sm:px-6 rounded-md whitespace-nowrap"
               btnName="Sign Up"
