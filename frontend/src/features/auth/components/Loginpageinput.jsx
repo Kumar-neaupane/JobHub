@@ -8,7 +8,7 @@ const Loginpageinput = ({label,clasName,type,placeholder,icon}) => {
     <div className="input1 flex flex-col gap-1">
                 <label>{label} :</label>
 
-                <div className="relative flex items-center gap-2 bg-neutral-200 p-2 w-full rounded-lg">
+                <div className="relative flex items-center gap-2 bg-neutral-200 p-2  rounded-lg">
                   <FontAwesomeIcon
                     icon={icon}
                     className=" text-[var(--paragraph-color)]  "

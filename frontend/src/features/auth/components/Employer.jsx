@@ -20,7 +20,7 @@ import RightTop from "./RightTop";
 import { Link } from "react-router-dom";
 import Loginpageinput from "./Loginpageinput";
 
-function Employer() {
+function Employer({ role, setRole }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -41,11 +41,11 @@ function Employer() {
           />
           <form>
           <div className="flex flex-row gap-4 items-center mb-4 ">
-                      <div className="google border-1 border-gray-300 p-2 rounded-lg  text-lg  w-full flex fex-row justify-center items-center cursor-pointer shadow-sm m-1 hover:border-1 hover:border-green-500 gap-2 hover:bg-blue-100">
+                      <div onClick={()=>setRole('jobseeker')} className={`border-1 p-2 rounded-lg text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 gap-2 ${role === 'jobseeker' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
                         <FontAwesomeIcon icon={faUser} className="text-[var(--bg-color)]" />
                         <span className="">Job Seeker</span>
                       </div>
-                      <div className="linkedin border-1 border-gray-300 p-2  rounded-lg  text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 hover:border-1 hover:border-green-500 gap-2 hover:bg-blue-100">
+                      <div onClick={()=>setRole('employer')} className={`border-1 p-2 rounded-lg text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 gap-2 ${role === 'employer' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
                         <FontAwesomeIcon
                           icon={faUserGroup}
                           className="text-[var(--bg-color)]"

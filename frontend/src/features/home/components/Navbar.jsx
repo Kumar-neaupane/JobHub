@@ -22,9 +22,9 @@ const Navbar = () => {
 
           <div className="navitems hidden lg:flex flex-row justify-between items-center w-full">
             <ul className="navitems flex flex-row gap-3 xl:gap-4 flex-start ml-8 xl:ml-[200px] text-[16px] xl:text-[18px] font-[600]">
-              <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                <a href="#">HOME</a>
-              </li>
+             <Link to="/"><li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
+                HOME
+              </li></Link>
               <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
                 <a href="#">FIND A JOBS</a>
               </li>

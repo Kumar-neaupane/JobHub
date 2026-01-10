@@ -10,6 +10,7 @@ import Footer from "../../components/Footer";
 import Dropdown from "../../components/Dropdown";
 import JobDetails from "../jobs/JobDetails";
 
+
 const Home = () => {
   const handleOnChange = (event) => {
     console.log(event.target.value);

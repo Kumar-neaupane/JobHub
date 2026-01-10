@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 const Input = ({ placeholder, classNames, handleChange, type,required }) => {
   return (
+    
     <input
     type={type}
       className={clsx(

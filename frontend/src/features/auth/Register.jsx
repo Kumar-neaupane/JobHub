@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import JobSeeker from './components/Jobseeker'
+import Employer from './components/Employer'
 
 const Register = () => {
+  const [role, setRole] = useState('jobseeker')
+  
   return (
     <div>
-      <JobSeeker/>
+      
+
+      {role === 'employer' ? <Employer role={role} setRole={setRole} /> : <JobSeeker role={role} setRole={setRole} />}
     </div>
   )
 }
