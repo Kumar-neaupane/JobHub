@@ -5,12 +5,12 @@ import companyImage from '../../assets/images/compangimage.jpeg'
 
 const JobDetails = () => {
   const cardDetails = [
-    { id: 1, companyName: "Google LLC", src: companyImage, location: "California, USA", time: "Full Time", salary: "$120,000 - $150,000", date: "2025/10/20" },
-    { id: 2, companyName: "Microsoft Corp", src: companyImage, location: "Redmond, USA", time: "Part Time", salary: "$80,000 - $100,000", date: "2025/11/15" },
-    { id: 3, companyName: "Apple Inc", src: companyImage, location: "Cupertino, USA", time: "Full Time", salary: "$130,000 - $160,000", date: "2025/12/01" },
-    { id: 4, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30" },
-    { id: 5, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30" },
-    { id: 6, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30" },
+    { id: 1, companyName: "Google LLC", src: companyImage, location: "California, USA", time: "Full Time", salary: "$120,000 - $150,000", date: "2025/10/20",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
+    { id: 2, companyName: "Microsoft Corp", src: companyImage, location: "Redmond, USA", time: "Part Time", salary: "$80,000 - $100,000", date: "2025/11/15",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
+    { id: 3, companyName: "Apple Inc", src: companyImage, location: "Cupertino, USA", time: "Full Time", salary: "$130,000 - $160,000", date: "2025/12/01",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
+    { id: 4, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
+    { id: 5, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
+    { id: 6, companyName: "Amazon.com Inc", src: companyImage, location: "Seattle, USA", time: "Contract", salary: "$90,000 - $120,000", date: "2025/09/30",desc:"We're looking for an experienced frontend developer to join our team and build amazing user experiences.", skills:"React, JavaScript, CSS" },
   ]
   const [activeTab, setActiveTab] = useState("Featured");
   const filteredJobs = activeTab === "Featured" ? cardDetails : cardDetails.filter((iteam) => iteam.time === activeTab);
@@ -30,7 +30,7 @@ const JobDetails = () => {
       </div>
       <div className='flex flex-col gap-4 p-4'>
         {filteredJobs.map((iteam) => (
-          <JobCard key={iteam.id} companyName={iteam.companyName} src={iteam.src} location={iteam.location} time={iteam.time} salary={iteam.salary} date={iteam.date} />
+          <JobCard key={iteam.id} companyName={iteam.companyName} src={iteam.src} location={iteam.location} time={iteam.time} salary={iteam.salary} date={iteam.date} desc={iteam.desc} skills={iteam.skills} />
         ))}
       </div>
 

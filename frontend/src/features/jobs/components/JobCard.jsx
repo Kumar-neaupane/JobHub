@@ -5,7 +5,7 @@ import { faHeart, faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import Button from '../../../components/Button';
 
 import { useState } from 'react';
-const JobCard = ({ companyName, src, location, time, salary, date }) => {
+const JobCard = ({ companyName, src, location, time, salary, date,desc,skills }) => {
   const [liked, setLiked] = useState("text-green-500");
   return (
     <div className='divCard flex flex-col lg:flex-row justify-between items-start lg:items-center shadow-lg transition-shadow hover:shadow-xl rounded-sm bg-white p-4 sm:p-5 md:p-6 gap-4 lg:gap-0 overflow-hidden'>
@@ -15,6 +15,8 @@ const JobCard = ({ companyName, src, location, time, salary, date }) => {
         </div>
         <div className='companydetails flex-1 min-w-0'>
           <h1 className='text-base sm:text-lg md:text-xl font-semibold text-[var(--heading)] mb-2 truncate'>{companyName}</h1>
+          <p className='text-[var(--paragraph-color)] pt-1'>{desc}.</p>
+          <p className='pt-1 text-lg text-[var(--paragraph-color)] py-2 font-extrabold'>{skills}</p>
           <div className='companydetails flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[var(--paragraph-color)]'>
             <span className='flex items-center gap-1'>
               <FontAwesomeIcon icon={faLocationPin} className="text-[var(--bg-color)]" />
