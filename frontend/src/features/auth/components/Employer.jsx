@@ -28,118 +28,120 @@ function Employer({ role, setRole }) {
   return (
     <>
       <Navbar />
-      <div
-        className="loginpage mt-20 flex justify-center items-center gap-20  "
-        data-aos="fade-left"
-        data-aos-delay="0"
-      >
-        <LeftsideCard />
-        <div className="right  w-140 shadow-2xl rounded-2xl p-10 bg-white">
-          <RightTop
-            children="Create Account"
-            topline="Join us and start your job search today!"
-          />
-          <form>
-          <div className="flex flex-row gap-4 items-center mb-4 ">
-                      <div onClick={()=>setRole('jobseeker')} className={`border-1 p-2 rounded-lg text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 gap-2 ${role === 'jobseeker' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
-                        <FontAwesomeIcon icon={faUser} className="text-[var(--bg-color)]" />
-                        <span className="">Job Seeker</span>
-                      </div>
-                      <div onClick={()=>setRole('employer')} className={`border-1 p-2 rounded-lg text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 gap-2 ${role === 'employer' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
-                        <FontAwesomeIcon
-                          icon={faUserGroup}
-                          className="text-[var(--bg-color)]"
-                        />{" "}
-                        <span className="">Employer</span>
-                      </div>
-                    </div>
-
-            <div className="flex flex-col gap-2">
-            <Loginpageinput label="Username " type="text" placeholder="Eg: Kumar Neupane" icon={faUser} />
-            <Loginpageinput label="Company Name" type="text" placeholder="Eg: ABC Corp" icon={faBuilding} />
-        
-            <Loginpageinput label="Email Address" type="text" placeholder="Eg: example@gmail.com" icon={faEnvelope} />
-         
-              <div className="input2 flex flex-col gap-1 ">
-                <label>Password :</label>
-                <div className="relative flex items-center gap-2 bg-neutral-200 p-2 w-full rounded-lg">
-                  <FontAwesomeIcon
-                    icon={faLock}
-                    className=" text-[var(--paragraph-color)]  "
-                  />
-
-                  <Input
-                    type={passwordVisible ? "text" : "password"}
-                    placeholder="Enter your password"
-                    classNames=" w-full outline-0 "
-                    required
-                  />
-                  <FontAwesomeIcon
-                    icon={passwordVisible ? faEyeSlash : faEye}
-                    onClick={togglePasswordVisibility}
-                    className="hover:text-green-500 text-[var(--paragraph-color)] cursor-pointer transition delay-100"
-                  />
-                </div>
-              </div>
-                <div className="input3 flex flex-col gap-1 ">
-                <label> Confirm Password :</label>
-                <div className="relative flex items-center gap-2 bg-neutral-200 p-2 w-full rounded-lg">
-                  <FontAwesomeIcon
-                    icon={faLock}
-                    className=" text-[var(--paragraph-color)]  "
-                  />
-
-                  <Input
-                    type={passwordVisible ? "text" : "password"}
-                    placeholder="Enter your password"
-                    classNames=" w-full outline-0 "
-                    required
-                  />
-                  <FontAwesomeIcon
-                    icon={passwordVisible ? faEyeSlash : faEye}
-                    onClick={togglePasswordVisibility}
-                    className="hover:text-green-500 text-[var(--paragraph-color)] cursor-pointer transition delay-100"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Button
-              className=" w-full rounded-lg my-7"
-              btnName="Register"
-              type="submit"
+      <div className="overflow-x-hidden min-h-screen">
+        <div
+          className="loginpage mt-8 sm:mt-12 lg:mt-20 flex flex-col lg:flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-8"
+          data-aos="fade-left"
+          data-aos-delay="0"
+        >
+          <LeftsideCard />
+          <div className="right w-full max-w-md lg:max-w-lg xl:max-w-xl shadow-2xl rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 bg-white">
+            <RightTop
+              children="Create Account"
+              topline="Join us and start your job search today!"
             />
-          </form>
+            <form>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center mb-4 sm:mb-6">
+                        <div onClick={()=>setRole('jobseeker')} className={`border p-2 sm:p-3 rounded-lg text-sm sm:text-base md:text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm gap-2 transition ${role === 'jobseeker' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
+                          <FontAwesomeIcon icon={faUser} className="text-sm sm:text-base text-[var(--bg-color)]" />
+                          <span>Job Seeker</span>
+                        </div>
+                        <div onClick={()=>setRole('employer')} className={`border p-2 sm:p-3 rounded-lg text-sm sm:text-base md:text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm gap-2 transition ${role === 'employer' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
+                          <FontAwesomeIcon
+                            icon={faUserGroup}
+                            className="text-sm sm:text-base text-[var(--bg-color)]"
+                          />
+                          <span>Employer</span>
+                        </div>
+                      </div>
 
-          <div className=" flex flex-row gap-4 items-center py-3 ">
-            <div className="flex-1  h-[1px] bg-[var(--paragraph-color)]"></div>
-            <div className="w-fit text-[var(--paragraph-color)]">
-              or continue with
-            </div>
-            <div className="flex-1  h-[1px] bg-[var(--paragraph-color)]"></div>
-          </div>
+              <div className="flex flex-col gap-3 sm:gap-4">
+              <Loginpageinput label="Username " type="text" placeholder="Eg: Kumar Neupane" icon={faUser} />
+              <Loginpageinput label="Company Name" type="text" placeholder="Eg: ABC Corp" icon={faBuilding} />
+          
+              <Loginpageinput label="Email Address" type="text" placeholder="Eg: example@gmail.com" icon={faEnvelope} />
+           
+                <div className="input2 flex flex-col gap-1 sm:gap-2">
+                  <label className="text-sm sm:text-base text-[var(--paragraph-color)] font-[500]">Password :</label>
+                  <div className="relative flex items-center gap-2 sm:gap-3 bg-neutral-200 p-2 sm:p-3 w-full rounded-lg">
+                    <FontAwesomeIcon
+                      icon={faLock}
+                      className="text-sm sm:text-base text-[var(--paragraph-color)]"
+                    />
 
-          <div className="flex flex-row gap-4 items-center ">
-            <div className="google border-1 border-gray-300 p-2 rounded-lg  text-lg  w-full flex fex-row justify-center items-center cursor-pointer shadow-sm m-1 hover:border-1 hover:border-green-500 gap-2 hover:bg-blue-100">
-              <FontAwesomeIcon icon={faGoogle} className="text-red-500" />
-              <span className="">Google</span>
+                    <Input
+                      type={passwordVisible ? "text" : "password"}
+                      placeholder="Enter your password"
+                      classNames="w-full outline-0 bg-neutral-200 text-sm sm:text-base"
+                      required
+                    />
+                    <FontAwesomeIcon
+                      icon={passwordVisible ? faEyeSlash : faEye}
+                      onClick={togglePasswordVisibility}
+                      className="hover:text-green-500 text-sm sm:text-base text-[var(--paragraph-color)] cursor-pointer transition delay-100"
+                    />
+                  </div>
+                </div>
+                  <div className="input3 flex flex-col gap-1 sm:gap-2">
+                  <label className="text-sm sm:text-base text-[var(--paragraph-color)] font-[500]">Confirm Password :</label>
+                  <div className="relative flex items-center gap-2 sm:gap-3 bg-neutral-200 p-2 sm:p-3 w-full rounded-lg">
+                    <FontAwesomeIcon
+                      icon={faLock}
+                      className="text-sm sm:text-base text-[var(--paragraph-color)]"
+                    />
+
+                    <Input
+                      type={passwordVisible ? "text" : "password"}
+                      placeholder="Confirm your password"
+                      classNames="w-full outline-0 bg-neutral-200 text-sm sm:text-base"
+                      required
+                    />
+                    <FontAwesomeIcon
+                      icon={passwordVisible ? faEyeSlash : faEye}
+                      onClick={togglePasswordVisibility}
+                      className="hover:text-green-500 text-sm sm:text-base text-[var(--paragraph-color)] cursor-pointer transition delay-100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <Button
+                className="w-full rounded-lg my-4 sm:my-6 md:my-7 text-sm sm:text-base"
+                btnName="Register"
+                type="submit"
+              />
+            </form>
+
+            <div className="flex flex-row gap-3 sm:gap-4 items-center py-4 sm:py-6">
+              <div className="flex-1 h-[1px] bg-[var(--paragraph-color)]"></div>
+              <div className="w-fit text-xs sm:text-sm md:text-base text-[var(--paragraph-color)] whitespace-nowrap">
+                or continue with
+              </div>
+              <div className="flex-1 h-[1px] bg-[var(--paragraph-color)]"></div>
             </div>
-            <div className="linkedin border-1 border-gray-300 p-2  rounded-lg  text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm m-1 hover:border-1 hover:border-green-500 gap-2 hover:bg-blue-100">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="text-blue-500 text-2xl"
-              />{" "}
-              <span className="">Linkedin</span>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
+              <div className="google border border-gray-300 p-2 sm:p-3 rounded-lg text-sm sm:text-base md:text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm hover:border-green-500 gap-2 hover:bg-blue-100 transition">
+                <FontAwesomeIcon icon={faGoogle} className="text-red-500 text-base sm:text-lg" />
+                <span>Google</span>
+              </div>
+              <div className="linkedin border border-gray-300 p-2 sm:p-3 rounded-lg text-sm sm:text-base md:text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm hover:border-green-500 gap-2 hover:bg-blue-100 transition">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="text-blue-500 text-lg sm:text-xl md:text-2xl"
+                />
+                <span>Linkedin</span>
+              </div>
             </div>
+            <p className="text-center my-6 sm:my-7 text-sm sm:text-base">
+              Already have an account?{" "}
+              <Link to="/login">
+                <span className="text-[var(--bg-color)] underline cursor-pointer hover:opacity-80 transition">
+                  Login
+                </span>
+              </Link>
+            </p>
           </div>
-          <p className="text-center my-7">
-            Don't have an account?{" "}
-            <Link to="/login">
-              <span className="text-[var(--bg-color)] underline cursor-pointer">
-                Login
-              </span>
-            </Link>
-          </p>
         </div>
       </div>
       <Footer />

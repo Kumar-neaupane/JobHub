@@ -92,65 +92,65 @@ const Jobs = () => {
   const totalPages = Math.ceil(cardDetails.length / itemsPerPage);
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
-      <div className="mx-60  jobs">
+      <div className="jobs w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-6 md:py-8">
         <div
           data-aos="fade-up"
           data-aos-delay="0"
-          className="top-section shadow-sm p-6 border-1 border-gray-300 rounded-lg  my-6"
+          className="top-section shadow-sm p-4 sm:p-6 border border-gray-300 rounded-lg my-4 sm:my-6"
         >
-          <div className="flex flex-row justify-between py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 py-4 sm:py-6">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-[600] text-[var(--heading)]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-[600] text-[var(--heading)]">
                 Find Your Dream Job
               </h1>
-              <p className="text-[var(--paragraph-color)]">
+              <p className="text-sm sm:text-base md:text-lg text-[var(--paragraph-color)]">
                 Discover opportunities from leading companies
               </p>
             </div>
-            <h2 className="bg-stone-200 h-10  rounded flex items-center px-3 text-[var(--paragraph-color)] font-[600]">
+            <h2 className="bg-stone-200 h-10 rounded flex items-center px-3 sm:px-4 text-sm sm:text-base text-[var(--paragraph-color)] font-[600] whitespace-nowrap">
               {cardDetails.length} Jobs Available
             </h2>
           </div>
-          <div className="input-feilds flex flex-row gap-6 mt-4">
-            <div className="p-2 relative flex items-center border-1 w-full  border-1 hover:border-1 border-gray-300 hover:border-green-500 rounded-2xl">
+          <div className="input-feilds flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4">
+            <div className="p-2 relative flex items-center border border-gray-300 hover:border-green-500 rounded-xl sm:rounded-2xl w-full">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="text-[var(--paragraph-color)]"
+                className="text-[var(--paragraph-color)] ml-2"
               />
-              <Input classNames="" placeholder="Search for jobs..." />
+              <Input classNames="w-full" placeholder="Search for jobs..." />
             </div>
-            <div className="p-2 relative flex items-center border-1 w-full  border-1 hover:border-1 border-gray-300 hover:border-green-500 rounded-2xl">
+            <div className="p-2 relative flex items-center border border-gray-300 hover:border-green-500 rounded-xl sm:rounded-2xl w-full">
               <FontAwesomeIcon
                 icon={faLocationDot}
-                className="text-[var(--paragraph-color)]"
+                className="text-[var(--paragraph-color)] ml-2"
               />
-              <Input classNames="" placeholder="Search for jobs..." />
+              <Input classNames="w-full" placeholder="Location..." />
             </div>
-            <Button className=" px-6 rounded-lg" btnName="Search" />
+            <Button className="w-full sm:w-auto px-6 rounded-lg whitespace-nowrap" btnName="Search" />
           </div>
         </div>
 
         <div
-          className="sidebar-main-content flex flex-row gap-6  "
+          className="sidebar-main-content flex flex-col lg:flex-row gap-4 sm:gap-6"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           {/* SideBar */}
           <Sidebar />
-          <div className="right  w-full">
-            <div className="top flex flex-row justify-between items-center py-4">
+          <div className="right w-full">
+            <div className="top flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 py-4">
               <div>
-                <h1 className="text-2xl font-[900] text-[var(--heading)]">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-[900] text-[var(--heading)]">
                   All Jobs
                 </h1>
-                <p className="text-lg text-[var(--paragraph-color)]">
+                <p className="text-sm sm:text-base md:text-lg text-[var(--paragraph-color)] mt-1">
                   Showing {cardDetails.length} results
                 </p>
               </div>
-              <div className="experience-level text-[var(--paragraph-color)]">
-                <Dropdown className="rounded-sm border-1 border-gray-300 my-2">
+              <div className="experience-level w-full sm:w-auto text-[var(--paragraph-color)]">
+                <Dropdown className="rounded-sm border border-gray-300 my-2 w-full sm:w-auto">
                   <option>Most Recent</option>
                   <option>Most Relevant</option>
                   <option>Salary : High to Low</option>

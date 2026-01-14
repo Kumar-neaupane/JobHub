@@ -56,7 +56,7 @@ const Home = () => {
               <Input
                 handleChange={handleOnChange}
                 placeholder="Keyword"
-                classNames="w-full lg:w-[300px] xl:w-[400px] h-[40px]"
+                classNames="w-full lg:w-[300px] xl:w-[400px] h-[40px] bg-white"
               />
             </div>
 

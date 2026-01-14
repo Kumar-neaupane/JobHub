@@ -1,18 +1,16 @@
 import React from "react";
 import clsx from "clsx";
 
-const Input = ({ placeholder, classNames, handleChange, type,required }) => {
+const Input = ({ error, classNames, type, ...props }) => {
   return (
-    
     <input
-    type={type}
+      type={type}
       className={clsx(
         classNames,
-        " border-0 hover:border-0 p-2 rounded-md focus:outline-none  text-sm sm:text-base"
+        "border-0 hover:border-0 p-2 rounded-md focus:outline-none text-sm sm:text-base",
+        error && "border border-red-500"
       )}
-      placeholder={placeholder}
-      onChange={handleChange}
-      required={required}
+      {...props}
     />
   );
 };

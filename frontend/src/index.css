@@ -1,31 +1,40 @@
 @import "tailwindcss";
-.title{
+
+.title {
     font-family: 'Road Rage', cursive;
 }
-.navitems{
+
+.navitems {
     font-family: 'Sour Gummy', cursive;
 }
-:root{
-    --bg-color:#00B074;
-    --paragraph-color:#666565;
-    --heading:#2B3940;
-    
+
+:root {
+    --bg-color: #00B074;
+    --paragraph-color: #666565;
+    --heading: #2B3940;
+
 }
-.Jobpost{
+
+.Jobpost {
     font-family: 'Sour Gummy', cursive;
 }
-.homeitems{
+
+.homeitems {
     font-family: 'Sour Gummy', cursive;
 }
-.loginpage{
+
+.loginpage {
     font-family: 'Sour Gummy', cursive;
 }
-.jobpost{
+
+.jobpost {
     font-family: 'Sour Gummy', cursive;
 }
-.jobs{
-    font-family: 'Sour Gummy', cursive; 
+
+.jobs {
+    font-family: 'Sour Gummy', cursive;
 }
-.about{
-     font-family: 'Sour Gummy', cursive; 
+
+.contentfonts{
+    font-family: 'Sour Gummy', cursive;
 }

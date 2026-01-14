@@ -22,28 +22,45 @@ const Navbar = () => {
 
           <div className="navitems hidden lg:flex flex-row justify-between items-center w-full">
             <ul className="navitems flex flex-row gap-6 xl:gap-10 flex-start ml-8 xl:ml-[200px] text-[16px] xl:text-[18px] font-[600]">
-             <Link to="/"><li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                HOME
-              </li></Link>
-            <Link to="/find-jobs"><li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                FIND A JOBS
-              </li></Link>
-             <Link to="/about"><li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                ABOUT
-              </li></Link>
-              <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                <a href="#">PAGES</a>
-              </li>
-              <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
-                <a href="#">CONTACT</a>
-              </li>
+              <Link to="/">
+                <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
+                  HOME
+                </li>
+              </Link>
+              <Link to="/find-jobs">
+                <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
+                  FIND A JOBS
+                </li>
+              </Link>
+              <Link to="/about">
+                <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
+                  ABOUT
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="hover:text-[#00B074] transition duration-300 hover:text-shadow-lg hover:underline">
+                  CONTACT
+                </li>
+              </Link>
             </ul>
 
             <div className="buttons flex flex-row gap-2">
-              <Button className="hidden xl:block" btnName="POST A JOB" to="/post-job" />
+              <Button
+                className="hidden xl:block"
+                btnName="POST A JOB"
+                to="/post-job"
+              />
               <div className="loginRegister flex flex-row gap-2 xl:gap-4 text-white">
-                <Button className="text-sm xl:text-base" btnName="LOGIN" to="/login" />
-                <Button className="text-sm xl:text-base" btnName="REGISTER" to="/register" />
+                <Button
+                  className="text-sm xl:text-base"
+                  btnName="LOGIN"
+                  to="/login"
+                />
+                <Button
+                  className="text-sm xl:text-base"
+                  btnName="REGISTER"
+                  to="/register"
+                />
               </div>
             </div>
           </div>
@@ -95,12 +112,18 @@ const Navbar = () => {
             <Link to="/post-job">
               <Button className="w-full text-center" btnName="POST A JOB" />
             </Link>
-           
-              <Button className="w-full text-center" btnName="LOGIN" to="/login" />
-           
-            
-              <Button className="w-full text-center" btnName="REGISTER" to="/register" />
-            
+
+            <Button
+              className="w-full text-center"
+              btnName="LOGIN"
+              to="/login"
+            />
+
+            <Button
+              className="w-full text-center"
+              btnName="REGISTER"
+              to="/register"
+            />
           </div>
         </div>
       </nav>
