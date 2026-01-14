@@ -20,11 +20,26 @@ import RightTop from "./RightTop";
 import { Link } from "react-router-dom";
 import Loginpageinput from "./Loginpageinput";
 import Employer from "./Employer";
+import { useForm } from "react-hook-form";
 
 function JobSeeker({ role, setRole }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+  const [success, setSuccess] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    setSuccess(data);
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 2000);
+    setTimeout(() => reset(), 1000);
   };
   return (
     
@@ -42,7 +57,7 @@ function JobSeeker({ role, setRole }) {
               children="Create Account"
               topline="Join us and start your job search today!"
             />
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center mb-4 sm:mb-6">
                         <div onClick={()=>setRole('jobseeker')} className={`border p-2 sm:p-3 rounded-lg text-sm sm:text-base md:text-lg w-full flex flex-row justify-center items-center cursor-pointer shadow-sm gap-2 transition ${role === 'jobseeker' ? 'border-green-500 bg-blue-100' : 'border-gray-300 hover:border-green-500 hover:bg-blue-100'}`}>
                           <FontAwesomeIcon icon={faUser} className="text-sm sm:text-base text-[var(--bg-color)]" />
@@ -58,11 +73,25 @@ function JobSeeker({ role, setRole }) {
                       </div>
 
               <div className="flex flex-col gap-3 sm:gap-4">
-              <Loginpageinput label="Username " type="text" placeholder="Eg: Kumar Neupane" icon={faUser} />
+              <Loginpageinput label="Username " type="text" placeholder="Eg: Kumar Neupane" icon={faUser} 
+                {...register("username", {
+                  required: "Username is Required",
+                })}
+                error={errors.username}
+              />
             
 
              
-              <Loginpageinput label="Email Address" type="text" placeholder="Eg: example@gmail.com" icon={faEnvelope} />
+              <Loginpageinput label="Email Address" type="text" placeholder="Eg: example@gmail.com" icon={faEnvelope} 
+                {...register("email", {
+                  required: "Email is Required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    message: "Invalid email address",
+                  },
+                })}
+                error={errors.email}
+              />
            
                 <div className="input2 flex flex-col gap-1 sm:gap-2">
                   <label className="text-sm sm:text-base text-[var(--paragraph-color)] font-[500]">Password :</label>
@@ -76,7 +105,18 @@ function JobSeeker({ role, setRole }) {
                       type={passwordVisible ? "text" : "password"}
                       placeholder="Enter your password"
                       classNames="w-full outline-0 bg-neutral-200 text-sm sm:text-base"
-                      required
+                      {...register("password", {
+                        required: "Password is Required",
+                        minLength:{
+                          value:6,
+                          message:"Password must be at least 6 characters"
+                        },
+                        pattern:{
+                          value:/^(?=.*[A-Za-z])(?=.*\d).{6,}$/,
+                          message:"Password must contain at least one letter and one number"
+                        }
+                      })}
+                      error={errors.password}
                     />
                     <FontAwesomeIcon
                       icon={passwordVisible ? faEyeSlash : faEye}
@@ -84,6 +124,7 @@ function JobSeeker({ role, setRole }) {
                       className="hover:text-green-500 text-sm sm:text-base text-[var(--paragraph-color)] cursor-pointer transition delay-100"
                     />
                   </div>
+                  {errors.password && <span className='text-red-500 text-xs sm:text-sm mt-1 block'>{errors.password.message}</span>}
                 </div>
                   <div className="input3 flex flex-col gap-1 sm:gap-2">
                   <label className="text-sm sm:text-base text-[var(--paragraph-color)] font-[500]">Confirm Password :</label>
@@ -98,13 +139,20 @@ function JobSeeker({ role, setRole }) {
                       placeholder="Confirm your password"
                       classNames="w-full outline-0 bg-neutral-200 text-sm sm:text-base"
                       required
-                    />
+                      {...register("confirmPassword", {
+                        required: "Confirm Password is Required",
+                        validate: (value) =>
+                          value === watch("password") || "Passwords do not match",
+                      })}
+                      error={errors.confirmPassword}
+                      />
                     <FontAwesomeIcon
                       icon={passwordVisible ? faEyeSlash : faEye}
                       onClick={togglePasswordVisibility}
                       className="hover:text-green-500 text-sm sm:text-base text-[var(--paragraph-color)] cursor-pointer transition delay-100"
                     />
                   </div>
+                  {errors.confirmPassword && <span className='text-red-500 text-xs sm:text-sm mt-1 block'>{errors.confirmPassword.message}</span>}
                 </div>
               </div>
 
@@ -113,6 +161,11 @@ function JobSeeker({ role, setRole }) {
                 btnName="Register"
                 type="submit"
               />
+              {success && (
+                <p className="text-green-500 my-4 sm:my-6 md:my-7 flex text-center justify-center items-center">
+                  Registration Successful!
+                </p>
+              )}
             </form>
 
             <div className="flex flex-row gap-3 sm:gap-4 items-center py-4 sm:py-6">

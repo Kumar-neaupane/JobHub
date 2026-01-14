@@ -19,7 +19,7 @@ const Loginpageinput = ({label,error, clasName,type,placeholder,icon, ...props})
                     placeholder={placeholder}
                     classNames={`bg-neutral-200 w-full text-sm sm:text-base ${clasName}`}
                     error={error}
-                    required
+                  
                     {...props}
                   />
                   
