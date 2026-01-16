@@ -78,7 +78,7 @@ const PostJob = () => {
                 </label>
                 <Input
                   placeholder="Enter job title"
-                  classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                  classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
                 />
               </div>
               <div className="flex flex-col w-full">
@@ -87,7 +87,7 @@ const PostJob = () => {
                 </label>
                 <Input
                   placeholder="Enter company name"
-                  classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                  classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ const PostJob = () => {
                 <label className="block text-sm sm:text-base text-[var(--paragraph-color)] font-[500] mb-1">
                   Category:
                 </label>
-                <Select className="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
+                <Select className="w-full border-1 border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
                   <option>Select a category</option>
                   <option>technology</option>
                   <option>education</option>
@@ -107,7 +107,7 @@ const PostJob = () => {
                 <label className="block text-sm sm:text-base text-[var(--paragraph-color)] font-[500] mb-1">
                   Job Type:
                 </label>
-                <Select className="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
+                <Select className="w-full border-1 border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
                   <option>Select job type</option>
                   <option>technology</option>
                   <option>education</option>
@@ -122,7 +122,7 @@ const PostJob = () => {
                 </label>
                 <Input
                   placeholder="Enter job Location"
-                  classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                  classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
                 />
               </div>
               <div className="flex flex-col w-full"></div>
@@ -162,7 +162,7 @@ const PostJob = () => {
                   />
                   <Input
                     placeholder="Min"
-                    classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                    classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
                     type="number"
                   />
                 </div>
@@ -173,7 +173,7 @@ const PostJob = () => {
                   />
                   <Input
                     placeholder="Max"
-                    classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                    classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
                     type="number"
                   />
                 </div>
@@ -185,7 +185,7 @@ const PostJob = () => {
               <label className="block text-sm sm:text-base text-[var(--paragraph-color)] font-[500] mb-1">
                 Experience Level
               </label>
-              <Select className="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
+              <Select className="w-full border-1 border-gray-300 hover:border-green-500 text-sm sm:text-base text-[var(--paragraph-color)]">
                 <option>Select experience level</option>
                 <option>Entry Level</option>
                 <option>Mid Level</option>
@@ -200,7 +200,7 @@ const PostJob = () => {
               </label>
               <Input
                 placeholder="MM/DD/YYYY"
-                classNames="w-full border border-gray-300 hover:border-green-500 text-sm sm:text-base"
+                classNames="w-full border-1 border-gray-300 hover:border-1 hover:border-green-500 text-sm sm:text-base"
               />
             </div>
           </div>

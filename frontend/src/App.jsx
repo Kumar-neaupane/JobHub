@@ -12,6 +12,9 @@ import PostJob from "./features/jobs/PostJob.jsx";
 import Jobs from "./features/jobs/Jobs.jsx";
 import About from "./features/about/About.jsx";
 import Contact from "./features/contact/Contact.jsx";
+import Dashboard from "./admin/Dashboard.jsx";
+import Topbar from "./admin/components/Topbar.jsx";
+import Sidebar from "./admin/components/Sidebar.jsx";
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +35,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/find-jobs" element={<Jobs />} />
         <Route path="/about" element={<About />} />
+         <Route path="/topbar" element={<Topbar />} />
+         <Route path="/sidebar" element={<Sidebar />} />
       </Routes>
     </div>
   );
