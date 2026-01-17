@@ -84,6 +84,17 @@ const Dashboard = () => {
       status: "Rejected",
     },
   ];
+  const latestReg=[
+    { title: "John Doe", companyName: "Job Seeker", Time: "3 hours ago" },
+    { title: "Jane Smith", companyName: "Job Seeker", Time: "1 day ago" },
+    { title: "Mike Johnson", companyName: "Job Seeker", Time: "2 days ago" },
+  ];
+
+  const recentApplications=[
+    { title: "Kumar Neupane", companyName: "Tech Solutions Inc.", Time: "4 hours ago" },
+    { title: "Sara Lee", companyName: "Innovatech Corp.", Time: "1 day ago" },
+    { title: "Liam Brown", companyName: "StartupXYZ", Time: "3 days ago" },
+  ]
   return (
     <div className="min-h-screen bg-gray-50">
       <Topbar />
@@ -146,28 +157,96 @@ const Dashboard = () => {
             </motion.div>
           </div>
 
-          <div className="shadow-lg border border-gray-300 rounded-lg bg-white p-6 mx-4 my-8 w-full md:w-1/3">
-            <div className="flex items-center gap-2 mb-4">
-              <p className="text-green-600 text-lg"></p>
-              <h2 className="text-[var(--heading)] text-xl font-bold">
-                Recently Posted Jobs
-              </h2>
-            </div>
-            <div className="flex flex-col gap-4">
-              {statusData.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start justify-between gap-4 border-b border-gray-200 pb-4 last:border-b-0"
-                >
-                  <Smallcard
-                    title={item.title}
-                    companyName={item.companyName}
-                    Time={item.Time}
-                  />
-                  <StatusBtn status={item.status} />
-                </div>
-              ))}
-            </div>
+          <div className="last-card flex flex-row gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.1, delay: 0.1 }}
+              className="shadow-lg border border-gray-300 rounded-lg bg-white p-6 mx-4 my-8 w-full md:w-1/3"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-green-600 text-lg"></p>
+                <h2 className="text-[var(--heading)] text-xl font-bold">
+                  Recently Posted Jobs
+                </h2>
+              </div>
+              <div className="flex flex-col gap-4">
+                {statusData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start justify-between gap-4 border-b border-gray-200 pb-4 last:border-b-0"
+                  >
+                    <Smallcard
+                      title={item.title}
+                      companyName={item.companyName}
+                      Time={item.Time}
+                    />
+                    <StatusBtn status={item.status} />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.1, delay: 0.1 }}
+              whileHover={{ scale: 1.04 }}
+              className="shadow-lg border border-gray-300 rounded-lg bg-white p-6 mx-4 my-8 w-full md:w-1/3"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-green-600 text-lg"></p>
+                <h2 className="text-[var(--heading)] text-xl font-bold">
+                  Latest Registrations
+                </h2>
+              </div>
+              <div className="flex flex-col gap-4">
+                {latestReg.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start justify-between gap-4 border-b border-gray-200 pb-4 last:border-b-0"
+                  >
+                    <Smallcard
+                      title={item.title}
+                      companyName={item.companyName}
+                      Time={item.Time}
+                    />
+                    {/* <StatusBtn status={item.status} /> */}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.1, delay: 0.1 }}
+              className="shadow-lg border border-gray-300 rounded-lg bg-white p-6 mx-4 my-8 w-full md:w-1/3"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <p className="text-green-600 text-lg"></p>
+                <h2 className="text-[var(--heading)] text-xl font-bold">
+                  Recent Applications
+                </h2>
+              </div>
+              <div className="flex flex-col gap-4">
+                {recentApplications.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start justify-between gap-4 border-b border-gray-200 pb-4 last:border-b-0"
+                  >
+                    <Smallcard
+                      title={item.title}
+                      companyName={item.companyName}
+                      Time={item.Time}
+                    />
+                    {/* <StatusBtn status={item.status} /> */}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
