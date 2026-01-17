@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const StatusBtn = () => {
+const statusStyles = {
+  Pending: "bg-yellow-100 text-yellow-700 border-yellow-200",
+  Approved: "bg-green-100 text-green-700 border-green-200",
+  Rejected: "bg-red-100 text-red-700 border-red-200",
+};
+
+const StatusBtn = ({ status }) => {
+  const resolvedClass = statusStyles[status] || statusStyles.Rejected;
+
   return (
-    <div>
-      <button type='button' className='rounded-lg bg-gray-200 border-gray-300 p-2'>{}</button>
-    </div>
-  )
-}
+    <button
+      type="button"
+      className={`rounded-full border px-3 py-1 text-sm font-semibold ${resolvedClass}`}
+    >
+      {status}
+    </button>
+  );
+};
 
-export default StatusBtn
+export default StatusBtn;

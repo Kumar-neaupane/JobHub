@@ -14,6 +14,8 @@ import Leftchart from "./components/Leftchart";
 import Rightsidechart from "./components/Rightsidechart";
 import Piechart from "./components/Piechart";
 import Quickstartcard from "./components/Quickstartcard";
+import Smallcard from "./components/Smallcard";
+import StatusBtn from "./components/StatusBtn";
 
 const Dashboard = () => {
   const gridItems = [
@@ -54,6 +56,33 @@ const Dashboard = () => {
     { toptext: "Application Rate", bottomtext: "67%" },
     { toptext: "Jobs Filled This Month", bottomtext: "124" },
     { toptext: "Active Employers", bottomtext: "456" },
+  ];
+
+  const statusData = [
+    {
+      title: "Frontend Developer",
+      companyName: "Tech Solutions Inc.",
+      Time: "2 hours ago",
+      status: "Pending",
+    },
+    {
+      title: "Backend Developer",
+      companyName: "Innovatech Corp.",
+      Time: "1 day ago",
+      status: "Approved",
+    },
+    {
+      title: "Product Manager",
+      companyName: "StartupXYZ",
+      Time: "5 hours ago",
+      status: "Approved",
+    },
+    {
+      title: "Data Analyst",
+      companyName: "Analytics Co",
+      Time: "6 hours ago",
+      status: "Rejected",
+    },
   ];
   return (
     <div className="min-h-screen bg-gray-50">
@@ -115,6 +144,30 @@ const Dashboard = () => {
                 ))}
               </motion.div>
             </motion.div>
+          </div>
+
+          <div className="shadow-lg border border-gray-300 rounded-lg bg-white p-6 mx-4 my-8 w-full md:w-1/3">
+            <div className="flex items-center gap-2 mb-4">
+              <p className="text-green-600 text-lg"></p>
+              <h2 className="text-[var(--heading)] text-xl font-bold">
+                Recently Posted Jobs
+              </h2>
+            </div>
+            <div className="flex flex-col gap-4">
+              {statusData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start justify-between gap-4 border-b border-gray-200 pb-4 last:border-b-0"
+                >
+                  <Smallcard
+                    title={item.title}
+                    companyName={item.companyName}
+                    Time={item.Time}
+                  />
+                  <StatusBtn status={item.status} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
