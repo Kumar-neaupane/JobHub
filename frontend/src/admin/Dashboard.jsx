@@ -1,6 +1,6 @@
 import React from "react";
-import Topbar from "./components/Topbar";
-import Sidebar from "./components/Sidebar";
+// import Topbar from "./components/Topbar";
+// import Sidebar from "./components/Sidebar";
 import Dashboardgrid from "./components/Dashboardgrid";
 import {
   faBriefcase,
@@ -100,13 +100,7 @@ const Dashboard = () => {
     { title: "Liam Brown", companyName: "StartupXYZ", Time: "3 days ago" },
   ];
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Topbar />
-      <div className="flex flex-row contentfonts">
-        <div className="w-1/5">
-          <Sidebar />
-        </div>
-        <div className="flex flex-col flex-1 overflow-x-hidden mx-8">
+    <div className="flex flex-col flex-1 overflow-x-hidden mx-8">
           <motion.div
             className="dashboard-content w-full h-fit grid grid-cols-5 gap-4 p-4"
             initial={{ opacity: 0, y: 20 }}
@@ -253,8 +247,6 @@ const Dashboard = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

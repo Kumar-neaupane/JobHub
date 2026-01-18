@@ -16,6 +16,7 @@ import Dashboard from "./admin/Dashboard.jsx";
 import Topbar from "./admin/components/Topbar.jsx";
 import Sidebar from "./admin/components/Sidebar.jsx";
 import Managejobs from "./admin/Managejobs.jsx";
+import Dashboardlayout from "./layouts/Dashboardlayout.jsx";
 
 const App = () => {
   useEffect(() => {
@@ -38,8 +39,11 @@ const App = () => {
         <Route path="/about" element={<About />} />
          <Route path="/topbar" element={<Topbar />} />
          <Route path="/sidebar" element={<Sidebar />} />
-         <Route path="/dashboard" element={<Dashboard />} />
-         <Route path="/managejobs" element={<Managejobs />} />
+         <Route path="/dashboard" element={<Dashboardlayout />} >
+          <Route index element={<Dashboard />} />
+          <Route path="managejobs" element={<Managejobs />} />
+         </Route>
+        
       </Routes>
     </div>
   );
