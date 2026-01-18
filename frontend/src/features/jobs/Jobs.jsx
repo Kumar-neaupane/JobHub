@@ -158,7 +158,9 @@ const Jobs = () => {
                 </Dropdown>
               </div>
             </div>
-            <div className="jobs-card grid grid-cols-1 gap-4">
+            <div  data-aos="fade-up"
+          data-aos-delay="200"
+             className="jobs-card grid grid-cols-1 gap-4">
               {currentJobs.map((card) => (
                 <JobCard
                   key={card.id}

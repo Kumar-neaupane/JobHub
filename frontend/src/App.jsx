@@ -15,6 +15,7 @@ import Contact from "./features/contact/Contact.jsx";
 import Dashboard from "./admin/Dashboard.jsx";
 import Topbar from "./admin/components/Topbar.jsx";
 import Sidebar from "./admin/components/Sidebar.jsx";
+import Managejobs from "./admin/Managejobs.jsx";
 
 const App = () => {
   useEffect(() => {
@@ -38,6 +39,7 @@ const App = () => {
          <Route path="/topbar" element={<Topbar />} />
          <Route path="/sidebar" element={<Sidebar />} />
          <Route path="/dashboard" element={<Dashboard />} />
+         <Route path="/managejobs" element={<Managejobs />} />
       </Routes>
     </div>
   );

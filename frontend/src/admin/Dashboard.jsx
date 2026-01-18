@@ -84,17 +84,21 @@ const Dashboard = () => {
       status: "Rejected",
     },
   ];
-  const latestReg=[
+  const latestReg = [
     { title: "John Doe", companyName: "Job Seeker", Time: "3 hours ago" },
     { title: "Jane Smith", companyName: "Job Seeker", Time: "1 day ago" },
     { title: "Mike Johnson", companyName: "Job Seeker", Time: "2 days ago" },
   ];
 
-  const recentApplications=[
-    { title: "Kumar Neupane", companyName: "Tech Solutions Inc.", Time: "4 hours ago" },
+  const recentApplications = [
+    {
+      title: "Kumar Neupane",
+      companyName: "Tech Solutions Inc.",
+      Time: "4 hours ago",
+    },
     { title: "Sara Lee", companyName: "Innovatech Corp.", Time: "1 day ago" },
     { title: "Liam Brown", companyName: "StartupXYZ", Time: "3 days ago" },
-  ]
+  ];
   return (
     <div className="min-h-screen bg-gray-50">
       <Topbar />

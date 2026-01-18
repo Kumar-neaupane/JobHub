@@ -23,7 +23,9 @@ const HelpfindJob = () => {
       </div>
 
       {/* Text and Buttons Section */}
-      <div className='textAndButtons w-full lg:w-1/2 lg:ml-8 xl:ml-[70px] flex flex-col justify-center'>
+      <div  data-aos="fade-left"
+          data-aos-delay="0"
+       className='textAndButtons w-full lg:w-1/2 lg:ml-8 xl:ml-[70px] flex flex-col justify-center'>
         <div className='mb-6 sm:mb-8 md:mb-9'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-[900] text-[#2B3940] leading-tight'>
             We Help To Get The Best Job And Find A Talent

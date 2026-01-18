@@ -134,7 +134,9 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="flex flex-col">
+        <div  data-aos="fade-right"
+          data-aos-delay="0"
+         className="flex flex-col">
           <h1
             className="text-white text-2xl sm:text-[26px] md:text-[30px] mb-4"
             data-aos="fade-left"
